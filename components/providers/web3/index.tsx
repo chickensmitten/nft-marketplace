@@ -2,11 +2,7 @@ import { createContext, FunctionComponent, useContext, useState } from "react"
 
 const Web3Context = createContext<any>(null);
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const Web3Provider: FunctionComponent<Props> = ({children}) => {
+const Web3Provider: FunctionComponent = ({children}) => {
   const [web3Api, setWeb3Api] = useState({test: "Hello Provider!"})
 
   return (
