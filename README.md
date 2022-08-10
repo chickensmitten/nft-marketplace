@@ -13,3 +13,7 @@ npm install @tailwindcss/forms
 The rest can read it in tailwind documentation. It is updated from time to time.
 
 ---
+
+# Steps to replicate
+- install npm dependencies
+- scaffold of the file directories
