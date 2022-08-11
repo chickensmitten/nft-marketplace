@@ -8,6 +8,8 @@ npx tailwindcss init -p
 
 npm install @tailwindcss/forms
 
+npm install ethers @metamask/providers
+
 ```
 
 The rest can read it in tailwind documentation. It is updated from time to time.
