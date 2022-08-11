@@ -1,5 +1,6 @@
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import { Contract, providers } from "ethers";
+
 declare global {
   interface Window {
     ethereum: MetaMaskInpageProvider;

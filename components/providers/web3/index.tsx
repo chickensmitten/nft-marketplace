@@ -1,6 +1,7 @@
+
 import { createContext, FunctionComponent, useContext, useEffect, useState } from "react"
 import { createDefaultState, Web3State } from "./utils";
-
+import { ethers } from "ethers";
 
 
 
@@ -11,11 +12,13 @@ const Web3Provider: FunctionComponent = ({children}) => {
 
   useEffect(() => {
     function initWeb3() {
+      const provider = new ethers.providers.Web3Provider(window.ethereum as any);
+
       setWeb3Api({
         ethereum: window.ethereum,
-        provider: null,
+        provider,
         contract: null,
-        isLoading: false        
+        isLoading: false
       })
     }
 
