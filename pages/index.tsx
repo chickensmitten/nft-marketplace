@@ -11,10 +11,16 @@ const Home: NextPage = () => {
   
   const { provider, contract } = useWeb3();
 
-  console.log(contract);
+  const getNftInfo = async () => {
+    console.log(await contract!.name());
+    console.log(await contract!.symbol());
+  }
+
+  if (contract) {
+    getNftInfo();
+  }
 
   const getAccounts = async () => {
-    console.log(provider)
     const accounts = await provider!.listAccounts();
     console.log(accounts[0]);
   }
