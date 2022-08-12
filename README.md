@@ -44,7 +44,7 @@ symbol
 
 ```
 
-The rest can read it in tailwind documentation. It is updated from time to time.
+> Promise creates an instance of an object.
 
 ---
 
