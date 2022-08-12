@@ -46,6 +46,10 @@ symbol
 
 > Promise creates an instance of an object.
 
+## Loading contracts
+To load truffle contracts, ensure that metamask is connected to ganache network.
+Then load contracts in code.
+
 ---
 
 # Steps to replicate
