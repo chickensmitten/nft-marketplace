@@ -50,6 +50,11 @@ symbol
 To load truffle contracts, ensure that metamask is connected to ganache network.
 Then load contracts in code.
 
+### Using hooks
+```
+npm install swr
+```
+
 ---
 
 # Steps to replicate
