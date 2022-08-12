@@ -8,13 +8,13 @@ export type Web3Dependencies = {
   ethereum: MetaMaskInpageProvider
 }
 
-export type CryptoHookFactory<D = any, P = any> = {
-  (d: Partial<Web3Dependencies>): CryptoHandlerHook<D, P>
+export type CryptoHookFactory<D = any, R = any, P = any> = {
+  (d: Partial<Web3Dependencies>): CryptoHandlerHook<D, R, P>
 }
 
-export type CryptoHandlerHook<D = any, P = any> = (params?: P) => CryptoSWRResponse<D>
+export type CryptoHandlerHook<D = any, R = any, P = any> = (params?: P) => CryptoSWRResponse<D, R>
 
-export type CryptoSWRResponse<D = any> = SWRResponse<D>;
+export type CryptoSWRResponse<D = any, R = any> = SWRResponse<D> & R;
 
 
 // another way to write the code above in a shorter manner. Code above is verbose for refactoring.
