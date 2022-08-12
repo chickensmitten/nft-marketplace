@@ -15,6 +15,11 @@ npm install -g truffle
 
 truffle init
 
+truffle migrate
+<!-- after configuring contracts and config -->
+
+npm install @openzeppelin/contracts
+
 ```
 
 The rest can read it in tailwind documentation. It is updated from time to time.
