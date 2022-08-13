@@ -1,6 +1,5 @@
 const NftMarket = artifacts.require("NftMarket");
 const { ethers } = require("ethers");
-const { describe, it } = require("node:test");
 
 contract("NftMarket", accounts => {
   let _contract = null;
