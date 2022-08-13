@@ -55,16 +55,19 @@ Then load contracts in code.
 npm install swr
 ```
 
-#### Setup hooks for accounts
-What are the conditions?
+#### Setup hooks for accounts and networks
+What are the if else conditions?
 1) when there's account
 2) when there isn't account
 3) if no wallet
 4) when there's account and validating
-
 etc
 
-#### Setup hooks for networks
+#### Running solidity tests
+```
+truffle test
+```
+
 
 ---
 
