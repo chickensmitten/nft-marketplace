@@ -1,7 +1,9 @@
 const NftMarket = artifacts.require("NftMarket");
+const { ethers } = require("ethers");
 
 contract("NftMarket", accounts => {
   let _contract = null;
+  let _nftPrice = ethers.utils.parseEther("0.3").toString();
 
   before(async () => {
     _contract = await NftMarket.deployed();
@@ -10,7 +12,7 @@ contract("NftMarket", accounts => {
   describe("Mint token", () => {
     const tokenURI = "https://test.com";
     before(async () => {
-      await _contract.mintToken(tokenURI, {
+      await _contract.mintToken(tokenURI, _nftPrice, {
         from: accounts[0]
       })
     })
@@ -27,12 +29,17 @@ contract("NftMarket", accounts => {
 
     it("should not be possible to create an NFT with used tokenURI", async () => {
       try {
-        await _contract.mintToken(tokenURI, {
+        await _contract.mintToken(tokenURI, _nftPrice, {
           from: accounts[0]
         })
       } catch(error) {
         assert(error, "NFT was minted with previously used tokenURI");
       }
+    })
+
+    it("should have one listed item", async () => {
+      const listedItemCount = await _contract.listedItemsCount();
+      assert.equal(listedItemCount.toNumber(), 1, "Listed items count is 1");
     })
 
   })
