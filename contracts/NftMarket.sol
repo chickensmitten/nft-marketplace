@@ -18,8 +18,13 @@ contract NftMarket is ERC721URIStorage {
   Counters.Counter private _listedItems;
   Counters.Counter private _tokenIds;
 
+  // uint256 is same as uint
+  uint256[] private _allNfts;
+
   mapping(string => bool) private _usedTokenURIs;
   mapping(uint => NftItem) private _idToNftItem;
+
+  mapping(uint => uint) private _idToNftIndex;
 
   event NftItemCreated (
     uint tokenId,
@@ -29,6 +34,15 @@ contract NftMarket is ERC721URIStorage {
   );
 
   constructor() ERC721("CreaturesNFT", "CNFT") {}
+
+  function totalSupply() public view returns (uint) {
+    return _allNfts.length;
+  }
+
+  function tokenByIndex(uint index) public view returns (uint) {
+    require(index < totalSupply(), "Index out of bounds");
+    return _allNfts[index];
+  }
 
   function mintToken(string memory tokenURI, uint price) public payable returns (uint) {
     require(!tokenURIExists(tokenURI), "Token URI already exists");
@@ -86,6 +100,25 @@ contract NftMarket is ERC721URIStorage {
     );
 
     emit NftItemCreated(tokenId, price, msg.sender, true);
+  }
+
+  // this code is overriding an existing function in ERC721.sol
+  function _beforeTokenTransfer(
+    address from,
+    address to,
+    uint tokenId
+  ) internal virtual override {
+    super._beforeTokenTransfer(from, to, tokenId);
+
+    // when minting token do this
+    if (from == address(0)) {
+      _addTokenToAllTokensEnumeration(tokenId);
+    }
+  }
+
+  function _addTokenToAllTokensEnumeration(uint tokenId) private {
+    _idToNftIndex[tokenId] = _allNfts.length;
+    _allNfts.push(tokenId);
   }
 
 }
