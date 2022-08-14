@@ -68,6 +68,12 @@ etc
 truffle test
 ```
 
+#### ETH ABI generator
+```
+npm install ethereum-abi-types-generator --save-dev
+
+npm run genContractType
+```
 
 ---
 
