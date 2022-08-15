@@ -51,7 +51,9 @@ export const addressCheckMiddleware = async (req: NextApiRequest & { session: Se
     const { v, r, s } = util.fromRpcSig(req.body.signature);
     const pubKey = util.ecrecover(util.toBuffer(nonce), v,r,s);
     const addrBuffer = util.pubToAddress(pubKey);
+
     const address = util.bufferToHex(addrBuffer);
+    // address is created by reverting using util to verify address in req.body.address
 
     console.log(address);
     if (address === req.body.address) {
