@@ -90,3 +90,15 @@ npm install ethereumjs-util
 npm install form-data
 ```
 
+Explanation:
+I am showing how you can send the address to the server and ensure it's the correct address.
+
+Otherwise, users can send any arbitrary address to the server and pretend it's their address. Without verification, I would not be able to verify if the address sent to the server is the address currently connected to the metamask.
+
+Another thing is if you have already verified the address on the server, you can communicate on the server with your contract. For example, if you have some blocked address in your smart-contract, you could check if the address is in that list and prevent the operation/uploading of data.
+
+
+#### Adding react Toastify
+```
+npm install --save react-toastify
+```
