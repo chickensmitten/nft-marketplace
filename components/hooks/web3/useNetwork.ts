@@ -19,7 +19,7 @@ type UseNetworkResponse = {
   isLoading: boolean;
   isSupported: boolean;
   targetNetwork: string;
-  isConnectedToNetwork: boolean;;
+  isConnectedToNetwork: boolean;
 }
 
 type NetworkHookFactory = CryptoHookFactory<string, UseNetworkResponse>
