@@ -32,3 +32,9 @@ export type Nft = {
 // <constant>.price
 // <constant>.creator
 // <constant>.isListed
+
+export type FileReq = {
+  bytes: Uint8Array;
+  contentType: string;
+  fileName: string;
+}
