@@ -82,6 +82,8 @@ npm run genContractType
 - scaffold of the file directories
 
 # Code for verification with Pinata
+refer to pinata verification explanation image in public for explanation
 ```
 npm install next-iron-session uuid axios
+npm i --save-dev @types/uuid
 ```
