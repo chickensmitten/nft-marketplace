@@ -106,4 +106,7 @@ npm install --save react-toastify
 #### Deploying to testnet or production
 ```
 npm install --save-dev @truffle/hdwallet-provider
+
+truffle migrate --network ropsten
 ```
+without funds, migration might fail.
