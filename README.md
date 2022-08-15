@@ -102,3 +102,8 @@ Another thing is if you have already verified the address on the server, you can
 ```
 npm install --save react-toastify
 ```
+
+#### Deploying to testnet or production
+```
+npm install --save-dev @truffle/hdwallet-provider
+```

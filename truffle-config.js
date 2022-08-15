@@ -1,3 +1,5 @@
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const keys = require("./keys.json");
 
 module.exports = {
   contracts_build_directory: "./public/contracts",
@@ -7,7 +9,18 @@ module.exports = {
      port: 7545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
-
+    ropsten: {
+      provider: () =>
+        new HDWalletProvider(
+          keys.PRIVATE_KEY,
+          keys.INFURA_ROPSTEN_URL
+        ),
+      network_id: 3,
+      gas: 5500000,
+      gasPrice: 20000000000,
+      confirmatinos: 2,
+      timeoutBlocks: 200
+     },
   },
   compilers: {
     solc: {
