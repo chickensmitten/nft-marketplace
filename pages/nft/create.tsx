@@ -114,9 +114,9 @@ const NftCreate: NextPage = () => {
 
       const res = await toast.promise(
         promise, {
-          pending: "Uploading metadata",
-          success: "Metadata uploaded",
-          error: "Metadata upload error"
+          pending: "Minting Nft Token",
+          success: "Nft has been create",
+          error: "Minting error"
         }
       )      
 
