@@ -86,4 +86,6 @@ refer to pinata verification explanation image in public for explanation
 ```
 npm install next-iron-session uuid axios
 npm i --save-dev @types/uuid
+npm install ethereumjs-util
 ```
+
