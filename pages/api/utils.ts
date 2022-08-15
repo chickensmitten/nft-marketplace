@@ -17,6 +17,7 @@ const abi = contract.abi;
 const targetNetwork = process.env.NEXT_PUBLIC_NETWORK_ID as keyof NETWORK;
 
 export const contractAddress = contract["networks"][targetNetwork]["address"];
+// contract might fail because it cannot find network 3 in public. It is not in public because we weren't able to migrate with ropsten, due to insufficient funds
 export const pinataApiKey = process.env.PINATA_API_KEY as string;
 export const pinataSecretApiKey = process.env.PINATA_SECRET_API_KEY as string;
 export const appName = process.env.APP_NAME as string;

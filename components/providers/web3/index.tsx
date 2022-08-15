@@ -23,7 +23,14 @@ const removeGlobalListeners = (ethereum: MetaMaskInpageProvider) => {
 
 const Web3Context = createContext<Web3State>(createDefaultState());
 
-const Web3Provider: FunctionComponent = ({children}) => {
+// TypeScript error: Property 'children' does not exist on type 'ReactNode'
+// https://stackoverflow.com/questions/59106742/typescript-error-property-children-does-not-exist-on-type-reactnode
+// The PropsWithChildren type is omitted after React 18, you have to include the children prop yourself
+interface Props {
+  children: React.ReactNode;
+}
+
+const Web3Provider: FunctionComponent<Props> = ({children}) => {
   const [web3Api, setWeb3Api] = useState<Web3State>(createDefaultState());
 
   useEffect(() => {

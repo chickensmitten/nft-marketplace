@@ -108,5 +108,7 @@ npm install --save react-toastify
 npm install --save-dev @truffle/hdwallet-provider
 
 truffle migrate --network ropsten
+
+npm run build
 ```
 without funds, migration might fail.
