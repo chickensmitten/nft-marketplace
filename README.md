@@ -80,3 +80,8 @@ npm run genContractType
 # Steps to replicate
 - install npm dependencies
 - scaffold of the file directories
+
+# Code for verification with Pinata
+```
+npm install next-iron-session uuid axios
+```
